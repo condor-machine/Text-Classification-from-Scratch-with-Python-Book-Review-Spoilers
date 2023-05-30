@@ -57,7 +57,7 @@ il download della collezione di stop words presente nella libreria 'nltk'.
 
 
 -- Digitare da riga di comando (da terminale): type frasi_pulite_features_selection_set.txt | mapper.py | reducer.py
-     NB. Se si sta utilizzando un OS diverso da Windows, sostituire 'type' con 'cat'
+     N.B. Se si sta utilizzando un OS diverso da Windows, sostituire 'type' con 'cat'
 
 
 
@@ -88,7 +88,7 @@ il download della collezione di stop words presente nella libreria 'nltk'.
 
 
 
-NB. Durante l'esecuzione del software verranno salvati nella cartella di lavoro i seguenti file:
+N.B. Durante l'esecuzione del software verranno salvati nella cartella di lavoro i seguenti file:
    - features_selection_set.json
    - model_set.json
    - frasi_pulite_features_selection_set.txt
@@ -97,7 +97,109 @@ NB. Durante l'esecuzione del software verranno salvati nella cartella di lavoro 
    - validation.json
    - test.json
 
-NB. Se si è già eseguita la procedura di preprocessing almeno una volta, e dunque nella cartella di lavoro
+N.B. Se si è già eseguita la procedura di preprocessing almeno una volta, e dunque nella cartella di lavoro
     sono presenti i file 'training.json', 'validation.json' e 'test.json', è possibile eseguire solamente la 
     procedura di modellazione, eseguendo il file: applicazione_modelli.py
+    
+    
+    
+# Text Classification from Scratch with Python Book Review Spoilers.
+
+-----REPOSITORY CONTENT-----
+- relazione_progetto.pdf
+- presentaziozne_progetto.pptx
+- cartella codici_progetto
+
+
+-----CONTENTED FOLDER codici_progetto-----
+
+- 'utili.py' ---> useful libraries and functions
+- 'preproc_pulizia_testi.py' ---> preprocessing part 1 (text cleaning)
+- 'mapper.py' ---> mapper (MapReduce procedure)
+- 'reducer.py' ---> reducer (MapReduce procedure)
+- 'preproc_features_selection.py' ---> preprocessing part 2 (features selection)
+- 'modelli.py' ---> functions for perceptron and SVM estimation and prediction
+- 'applicazione_modelli.py' ---> models startup
+- 'perceptron.py' ---> perceptron estimation and prediction on data
+- 'svm.py' ---> SVM estimation and prediction on data
+
+
+
+
+-----DOWNLOAD DATASET GOODREADS-----
+
+It is necessary to download the file containing the dataset from the following link:
+https://drive.google.com/uc?id=196W2kDoZXRPjzbTjM6uvTidn6aTpsFnS
+
+The file 'goodreads_reviews_spoiler.json.gz' must then be placed in the 'codici_progetto' folder.
+
+
+
+
+-----LIBRARIES NEEDED-----
+
+It is necessary to install the following libraries: 'nltk', 'sklearn', 'numpy'.
+It is necessary that the machine be connected to the network so that the software can automatically perform 
+download the collection of stop words present in the 'nltk' library.
+
+
+
+
+
+----- RUNNING THE SOFTWARE-----
+
+-- Position yourself inside the 'codici_progetto' folder.
+
+
+-- Run: preproc_pulizia_testi.py
+
+	To replicate the experiment described in the report, you must:
+
+	- Answer YES (or yes, Y, y) to the following questions:
+  	  'Do you want to keep only the reviews of books reviewed at least 20 times?'
+  	  'Do you want to delete sentences with less than 10 terms and those with more than 30 terms?'
+
+
+
+-- Type from command line (from terminal): type frasi_pulite_features_selection_set.txt | mapper.py | reducer.py
+     N.B. If you are using an OS other than Windows, replace 'type' with 'cat'
+
+
+
+-- Run: preproc_features_selection.py
+
+	To replicate the experiment described in the report, you must:
+
+	- Answer YES (or yes, Y, y) to the following questions:
+  	  'Do you want to keep only the terms that appear at least 5 times?'
+  	  'Do you want to keep only the 20% of terms that scored highest in the chi square test?'
+          'Do you want to proceed with the modeling phase?'
+
+	- Answer P (or p) to the following question:
+  	  'Do you want to adapt the perceptron or SVM?'
+
+	- Answer YES (or yes, Y, y) to the following questions:
+  	  'Do you want to set the number of iterations to 23?'
+ 	  'Do you want to fit another model?'
+
+	- Answer YES (or s) to the following question:
+  	  'Do you want to adapt the perceptron or SVM?'
+
+	- Answer YES (or yes, Y, y) to the following questions:
+  	  'Do you want to set the number of iterations to 34?'
+  	  'Do you want to fix the learning rate at 1e-08?'
+  	  'Do you want to fix the C-value at 1.1e+09?'
+	  
+N.B. During the execution of the software the following files will be saved in the working folder:
+   - features_selection_set.json
+   - model_set.json
+   - frasi_pulite_features_selection_set.txt
+   - conteggio_termini.txt
+   - training.json
+   - validation.json
+   - test.json
+
+N.B. If you have already performed the preprocessing procedure at least once, and therefore in the working directory
+    files 'training.json', 'validation.json' and 'test.json' are present, you can only run the 
+    modeling procedure, by running the file: applicazione_modelli.py
 
