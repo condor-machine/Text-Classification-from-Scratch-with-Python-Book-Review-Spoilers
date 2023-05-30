@@ -1,4 +1,4 @@
-# Text Classification from Scratch with Python Book Review Spoilers
+# Text Classification from Scratch with Python Book Review Spoilers (ITA)
 
 -----CONTENUTO REPOSITORY-----
 - relazione_progetto.pdf
@@ -103,7 +103,7 @@ N.B. Se si è già eseguita la procedura di preprocessing almeno una volta, e du
     
     
     
-# Text Classification from Scratch with Python Book Review Spoilers.
+# Text Classification from Scratch with Python Book Review Spoilers (EN)
 
 -----REPOSITORY CONTENT-----
 - relazione_progetto.pdf
